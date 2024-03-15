@@ -34,7 +34,7 @@ public class CustomerBean implements Serializable {
     /**
      * Retourne la liste des clients pour affichage dans une DataTable.
      */
-    private List<Customer> getCustomers(){
+    public List<Customer> getCustomers(){
         if( customerList == null )
         {
             customerList =  customerManager.getAllCustomers();
