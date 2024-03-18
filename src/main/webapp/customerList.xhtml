@@ -12,10 +12,10 @@
         <h:form>
             
             <p:dataTable 
-                            value="#{customerBean.customers}" 
-                            var="item" 
-                            paginator="true"
-                            rows="10" >
+                value="#{customerBean.customers}" 
+                var="item" 
+                paginator="true"
+                rows="10" >
 
                 <p:column>
                    <f:facet name="header">
@@ -45,14 +45,14 @@
                     <h:outputText value="#{item.zip.zipCode}" />
                 </p:column>
 
-                <p:column>
+                <p:column sortBy="#{item.city}">
                    <f:facet name="header">
                        <h:outputText value="Ville"/>
                    </f:facet>
                    <h:outputText value="#{item.city}"/>
                 </p:column>
                 
-                <p:column sortBy="#{item.city} , #{item.state}" filterBy="#{item.state}">
+                <p:column sortBy="#{item.state}" filterBy="#{item.state}">
                    <f:facet name="header">
                        <h:outputText value="Etat"/>
                    </f:facet>
