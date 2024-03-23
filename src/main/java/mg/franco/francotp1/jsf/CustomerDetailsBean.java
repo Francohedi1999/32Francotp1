@@ -9,8 +9,11 @@ import jakarta.enterprise.context.Dependent;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import java.io.Serializable;
+import java.util.List;
 import mg.franco.francotp1.entity.Customer;
+import mg.franco.francotp1.entity.Discount;
 import mg.franco.francotp1.service.CustomerManager;
+import mg.franco.francotp1.service.DiscountManager;
 
 /**
  *
@@ -27,6 +30,9 @@ public class CustomerDetailsBean implements Serializable {
      */
     @Inject
     private CustomerManager customerManager;
+    @Inject
+    private DiscountManager discountManager ;
+    
 
     public int getIdCustomer() {
       return idCustomer;
@@ -36,13 +42,16 @@ public class CustomerDetailsBean implements Serializable {
       this.idCustomer = idCustomer;
     }
 
+    public List<Discount> getDiscounts() {
+        return discountManager.getAllDiscounts();
+    }
     /**
      * Retourne les détails du client courant (contenu dans l'attribut customer de
      * cette classe).
      */
-      public Customer getCustomer() {
-        return customer;
-      }
+    public Customer getCustomer() {
+      return customer;
+    }
 
     /**
      * Action handler - met à jour dans la base de données les données du client
