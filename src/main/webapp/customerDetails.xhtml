@@ -113,10 +113,10 @@
                         title="Discount" 
                         required="true" 
                         requiredMessage="The Discount field is required.">
-                        <!-- TODO: update below reference to list of available items-->
-                        <f:selectItems  value="#{customerDetailsBean.discounts}"
-                                        var="discount"
-                                        itemLabel="#{discount.code}"/>
+                        <f:selectItems value="#{customerDetailsBean.discounts}"
+                                       var="discount"
+                                       itemLabel="#{discount.code} (#{discount.rate} %)" 
+                                       itemValue="#{discount}"/>
                     </h:selectOneMenu>
                     
                 </h:panelGrid>
