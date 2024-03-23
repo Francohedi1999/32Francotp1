@@ -6,6 +6,7 @@ package mg.franco.francotp1.jsf;
 
 import jakarta.inject.Named;
 import jakarta.enterprise.context.Dependent;
+import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import java.io.Serializable;
 import mg.franco.francotp1.entity.Customer;
@@ -15,8 +16,8 @@ import mg.franco.francotp1.service.CustomerManager;
  *
  * @author Franco
  */
-@Named(value = "customerDetailsBean")
-@Dependent
+@Named
+@ViewScoped
 public class CustomerDetailsBean implements Serializable {
     
     private int idCustomer;
