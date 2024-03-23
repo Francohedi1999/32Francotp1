@@ -17,7 +17,7 @@
     <h:body>
         <f:view>
 
-            <h:form>
+            <h:form rendered="#{customerDetailsBean.customer != null}">
                 <h1><h:outputText value="Create/Edit"/></h1>
                 <h:panelGrid columns="2">
                     
@@ -37,8 +37,10 @@
                         for="name" />
                     <h:inputText 
                         id="name" 
-                        value="#{customerDetailsBean.customer.name}" 
-                        title="Name" />
+                        value="#{customerDetailsBean.customer.name}"
+                        title="Name"  
+                        required="true" 
+                        requiredMessage="The name field is required." />
                     
                     <h:outputLabel 
                         value="Addressline1:" 
@@ -46,7 +48,9 @@
                     <h:inputText 
                         id="addressline1" 
                         value="#{customerDetailsBean.customer.addressline1}" 
-                        title="Addressline1" />
+                        title="Addressline1"  
+                        required="true" 
+                        requiredMessage="The addressline1 field is required." />
                     
                     <h:outputLabel 
                         value="Addressline2:" 
@@ -54,7 +58,9 @@
                     <h:inputText 
                         id="addressline2" 
                         value="#{customerDetailsBean.customer.addressline2}" 
-                        title="Addressline2" />
+                        title="Addressline2" 
+                        required="true" 
+                        requiredMessage="The addressline2 field is required."/>
                     
                     <h:outputLabel 
                         value="City:" 
@@ -62,7 +68,9 @@
                     <h:inputText 
                         id="city" 
                         value="#{customerDetailsBean.customer.city}" 
-                        title="City" />
+                        title="City" 
+                        required="true" 
+                        requiredMessage="The city field is required."/>
                     
                     <h:outputLabel 
                         value="State:" 
@@ -70,7 +78,9 @@
                     <h:inputText 
                         id="state" 
                         value="#{customerDetailsBean.customer.state}" 
-                        title="State" />
+                        title="State"
+                        required="true" 
+                        requiredMessage="The state field is required."/>
                     
                     <h:outputLabel 
                         value="Phone:" 
@@ -78,7 +88,9 @@
                     <h:inputText 
                         id="phone" 
                         value="#{customerDetailsBean.customer.phone}" 
-                        title="Phone" />
+                        title="Phone" 
+                        required="true" 
+                        requiredMessage="The phone field is required."/>
                     
                     <h:outputLabel 
                         value="Fax:" 
@@ -86,7 +98,9 @@
                     <h:inputText 
                         id="fax" 
                         value="#{customerDetailsBean.customer.fax}" 
-                        title="Fax" />
+                        title="Fax"
+                        required="true" 
+                        requiredMessage="The fax field is required." />
                     
                     <h:outputLabel 
                         value="Email:" 
@@ -94,7 +108,9 @@
                     <h:inputText 
                         id="email" 
                         value="#{customerDetailsBean.customer.email}" 
-                        title="Email" />
+                        title="Email"
+                        required="true" 
+                        requiredMessage="The email field is required." />
                     
                     <h:outputLabel 
                         value="CreditLimit:" 
@@ -102,7 +118,9 @@
                     <h:inputText 
                         id="creditLimit" 
                         value="#{customerDetailsBean.customer.creditLimit}" 
-                        title="CreditLimit" />
+                        title="CreditLimit"
+                        required="true" 
+                        requiredMessage="The creditLimit field is required." />
                     
                     <h:outputLabel 
                         value="Discount:" 
@@ -128,6 +146,8 @@
                 <h:messages/>
   
             </h:form>
+            
+            <h:outputText value="Aucun client avec l'id #{customerDetailsBean.idCustomer} !" rendered='#{customerDetailsBean.customer == null}'/>
             
         </f:view>
 
