@@ -112,7 +112,8 @@
                         value="#{customerDetailsBean.customer.discount}" 
                         title="Discount" 
                         required="true" 
-                        requiredMessage="The Discount field is required.">
+                        requiredMessage="The Discount field is required."
+                        converter="discountConverter">
                         <f:selectItems value="#{customerDetailsBean.discounts}"
                                        var="discount"
                                        itemLabel="#{discount.code} (#{discount.rate} %)" 
